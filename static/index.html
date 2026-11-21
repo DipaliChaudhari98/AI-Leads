@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeadGen AI | Premium Agentic Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                    </svg>
+                    <span>LeadGen AI</span>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active" id="nav-dashboard">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    Dashboard
+                </a>
+                <a href="/api/followups" class="nav-item" id="nav-followups">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    Follow-ups
+                </a>
+                <a href="#" class="nav-item" id="nav-followup-dates">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    Follow-up Dates
+                </a>
+                <a href="#" class="nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    Campaigns
+                </a>
+                <a href="#" class="nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    Messages
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-content">
+                    <h1>Campaign Dashboard</h1>
+                    <p class="text-muted">Manage your multi-agent lead generation process.</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-outline" id="refresh-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                            <path d="M3 3v5h5" />
+                        </svg>
+                        Refresh Feed
+                    </button>
+                </div>
+            </header>
+
+            <div id="view-dashboard">
+                <div class="dashboard-layout">
+                    <!-- Left Column: Form -->
+                    <div class="ui-card" id="control-panel">
+                        <div class="card-header">
+                            <h2>New Campaign</h2>
+                            <p class="text-muted">Configure the parameters for the agents to start prospecting.</p>
+                        </div>
+
+                        <form id="campaign-form" class="space-y-6">
+                            <div class="form-group">
+                                <label for="roles">Target Roles</label>
+                                <input type="text" id="roles" name="roles" class="ui-input"
+                                    placeholder="e.g. CTO, VP Engineering" required value="CEO, Founder">
+                                <p class="form-help">The job titles you want to target.</p>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group flex-1">
+                                    <label for="location">Target Location</label>
+                                    <input type="text" id="location" name="location" class="ui-input"
+                                        placeholder="e.g. United States" value="United States">
+                                </div>
+                                <div class="form-group flex-1">
+                                    <label for="industry">Target Industry</label>
+                                    <input type="text" id="industry" name="industry" class="ui-input"
+                                        placeholder="e.g. Software" value="Software">
+                                </div>
+                            </div>
+
+                            <div class="dashed-section space-y-4">
+                                <div class="form-row">
+                                    <div class="form-group flex-1">
+                                        <label for="size">Company Size</label>
+                                        <input type="text" id="size" name="size" class="ui-input"
+                                            placeholder="e.g. 1-10, 11-50">
+                                    </div>
+                                    <div class="form-group flex-1">
+                                        <label for="limit">Result Limit</label>
+                                        <input type="number" id="limit" name="limit" class="ui-input"
+                                            value="10" min="1" max="1000">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="companies">Seed Companies (Optional)</label>
+                                    <input type="text" id="companies" name="companies" class="ui-input"
+                                        placeholder="e.g. Google, Microsoft">
+                                    <p class="form-help">Specific companies to bypass general industry search.</p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="filters">Custom Filters (JSON or key=value)</label>
+                                    <input type="text" id="filters" name="filters" class="ui-input"
+                                        placeholder='e.g. {"hasEmail": true, "hasPhone": false} or hasEmail=true'>
+                                    <p class="form-help">Additional scraper parameters.</p>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="strategy">Follow-up Strategy</label>
+                                <select id="strategy" name="strategy" class="ui-select">
+
+                                    <option value="fixed">Fixed (Send regardless)</option>
+                                </select>
+                            </div>
+
+                            <!-- Ensure the mode is set to 'agent' so it launches the Crew instead of direct script -->
+                            <input type="hidden" name="mode" value="agent">
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline"
+                                    onclick="document.getElementById('campaign-form').reset()">Reset</button>
+                                <button type="submit" class="btn btn-primary" id="submit-btn">
+                                    <span id="submit-text">Launch Crew</span>
+                                    <div class="spinner" id="loader"></div>
+                                </button>
+                            </div>
+                        </form>
+
+                        <div id="campaign-status-msg" class="status-alert" style="display: none;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                            <span id="campaign-status-text">Crew is working...</span>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Stats & Leads -->
+                    <div class="space-y-6">
+                        <div class="stats-container">
+                            <div class="ui-stat-card">
+                                <div class="stat-header">
+                                    <span class="stat-title">Total Leads</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" class="text-muted">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                </div>
+                                <div class="stat-value" id="stat-total">0</div>
+                            </div>
+                            <div class="ui-stat-card">
+                                <div class="stat-header">
+                                    <span class="stat-title">Emails Sent</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" class="text-muted">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="stat-value text-primary" id="stat-sent">0</div>
+                            </div>
+                            <div class="ui-stat-card">
+                                <div class="stat-header">
+                                    <span class="stat-title">Qualified Leads</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" class="text-muted">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="stat-value text-success" id="stat-qualified">0</div>
+                            </div>
+                        </div>
+
+                        <div class="ui-card flex-1" style="display: flex; flex-direction: column;">
+                            <div class="card-header">
+                                <h2>Live CRM Feed</h2>
+                                <p class="text-muted">Real-time updates from your automated agents.</p>
+                            </div>
+                            <div id="leads-container" class="leads-feed">
+                                <div class="empty-state">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1" class="text-muted">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                    <p>No leads found.</p>
+                                    <span class="text-muted text-sm">Launch a campaign to start prospecting.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End view-dashboard -->
+
+                <div id="view-followups" style="display: none; animation: fadeIn 0.3s ease-out;">
+                    <div class="ui-card">
+                        <div class="card-header followup-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; margin-bottom: 1.5rem;">
+                            <div>
+                                <h2>Follow-up Management</h2>
+                                <p class="text-muted" style="margin-top: 0.25rem;">
+                                    Track scheduled emails, outreach status, and upcoming follow-ups.
+                                </p>
+                            </div>
+                            <button class="btn btn-primary" id="process-selected-btn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem;">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                Process Selected
+                            </button>
+                        </div>
+                        <div class="table-container">
+                            <table class="ui-table w-full">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 40px; text-align: center;">
+                                            <input type="checkbox" id="select-all-followups" class="ui-checkbox">
+                                        </th>
+                                        <th>Lead / Company</th>
+                                        <th>Contact Info</th>
+                                        <th>Outreach Type</th>
+                                        <th>Status</th>
+                                        <th>Lead Status</th>
+                                        <th>Next Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="followups-tbody">
+                                    
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div> <!-- End view-followups -->
+
+                <div id="view-followup-dates" style="display: none; animation: fadeIn 0.3s ease-out;">
+                    <div class="ui-card">
+                        <div class="card-header followup-header" style="border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; margin-bottom: 1.5rem;">
+                            <h2>Follow-up Dates</h2>
+                            <p class="text-muted" style="margin-top: 0.25rem;">
+                                Edit initial email dates and track scheduled follow-ups for your leads.
+                            </p>
+                        </div>
+                        <div class="table-container">
+                            <table class="ui-table w-full">
+                                <thead>
+                                    <tr>
+                                        <th>Lead / Company</th>
+                                        <th>Initial Email Date</th>
+                                        <th>Next Follow-up</th>
+                                        <th>Last Follow-up</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="followup-dates-tbody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div> <!-- End view-followup-dates -->
+
+        </main>
+    </div>
+    <script src="/static/script.js?v=3"></script>
+</body>
+
+</html>

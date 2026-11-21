@@ -1,0 +1,212 @@
+{
+  "new york": {
+    "city": "New York",
+    "state": "New York",
+    "country": "United States",
+    "timezone": "America/New_York",
+    "utc_offset": "UTC-04:00"
+  },
+  "boston": {
+    "city": "Boston",
+    "state": "Massachusetts",
+    "country": "United States",
+    "timezone": "America/New_York",
+    "utc_offset": "UTC-04:00"
+  },
+  "palo alto": {
+    "city": "Palo Alto",
+    "state": "California",
+    "country": "United States",
+    "timezone": "America/Los_Angeles",
+    "utc_offset": "UTC-07:00"
+  },
+  "israel": {
+    "city": null,
+    "state": null,
+    "country": "\u05d9\u05e9\u05e8\u05d0\u05dc",
+    "timezone": "Asia/Jerusalem",
+    "utc_offset": "UTC+03:00"
+  },
+  "washington": {
+    "city": "Washington",
+    "state": "District of Columbia",
+    "country": "United States",
+    "timezone": "America/New_York",
+    "utc_offset": "UTC-04:00"
+  },
+  "austin, texas, united states": {
+    "city": "Austin",
+    "state": "Texas",
+    "country": "United States",
+    "timezone": "America/Chicago",
+    "utc_offset": "UTC-05:00"
+  },
+  "chantilly": {
+    "city": "Chantilly",
+    "state": "Hauts-de-France",
+    "country": "France",
+    "timezone": "Europe/Paris",
+    "utc_offset": "UTC+02:00"
+  },
+  "houston": {
+    "city": "Houston",
+    "state": "Texas",
+    "country": "United States",
+    "timezone": "America/Chicago",
+    "utc_offset": "UTC-05:00"
+  },
+  "seattle": {
+    "city": "Seattle",
+    "state": "Washington",
+    "country": "United States",
+    "timezone": "America/Los_Angeles",
+    "utc_offset": "UTC-07:00"
+  },
+  "san francisco, ca": {
+    "city": "San Francisco",
+    "state": "California",
+    "country": "United States",
+    "timezone": "America/Los_Angeles",
+    "utc_offset": "UTC-07:00"
+  },
+  "mumbai, india": {
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "country": "India",
+    "timezone": "Asia/Kolkata",
+    "utc_offset": "UTC+05:30"
+  },
+  "united kingdom": {
+    "city": "prakasam, andhra pradesh, india",
+    "state": "",
+    "country": "United Kingdom",
+    "timezone": "UTC",
+    "utc_offset": "UTC+00:00"
+  },
+  "india": {
+    "city": "guwahati, assam, india",
+    "state": "",
+    "country": "India",
+    "timezone": "Asia/Kolkata",
+    "utc_offset": "UTC+05:30"
+  },
+  "australia": {
+    "city": "Sydney",
+    "state": "New South Wales",
+    "country": "Australia",
+    "timezone": "Australia/Sydney",
+    "utc_offset": "UTC+10:00"
+  },
+  "canada": {
+    "city": "Montr\u00e9al",
+    "state": "Qu\u00e9bec",
+    "country": "Canada",
+    "timezone": "America/Toronto",
+    "utc_offset": "UTC-04:00"
+  },
+  "united states": {
+    "city": "Saint Lucie County",
+    "state": "Florida",
+    "country": "United States",
+    "timezone": "America/New_York",
+    "utc_offset": "UTC-04:00"
+  },
+  "china": {
+    "city": "\u5e7f\u5dde\u5e02",
+    "state": "\u5e7f\u4e1c\u7701",
+    "country": "\u4e2d\u56fd",
+    "timezone": "Asia/Shanghai",
+    "utc_offset": "UTC+08:00"
+  },
+  "czech republic": {
+    "city": "Brno",
+    "state": null,
+    "country": "\u010cesko",
+    "timezone": "Europe/Prague",
+    "utc_offset": "UTC+02:00"
+  },
+  "denmark": {
+    "city": "K\u00f8benhavn",
+    "state": "Region Hovedstaden",
+    "country": "Danmark",
+    "timezone": "Europe/Copenhagen",
+    "utc_offset": "UTC+02:00"
+  },
+  "qatar": {
+    "city": null,
+    "state": null,
+    "country": "\u0642\u0637\u0631",
+    "timezone": "Asia/Qatar",
+    "utc_offset": "UTC+03:00"
+  },
+  "south africa": {
+    "city": "Bloemfontein",
+    "state": "Free State",
+    "country": "South Africa",
+    "timezone": "Africa/Johannesburg",
+    "utc_offset": "UTC+02:00"
+  },
+  "italy": {
+    "city": "Roma",
+    "state": "Lazio",
+    "country": "Italia",
+    "timezone": "Europe/Rome",
+    "utc_offset": "UTC+02:00"
+  },
+  "russia": {
+    "city": "\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433",
+    "state": "\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433",
+    "country": "\u0420\u043e\u0441\u0441\u0438\u044f",
+    "timezone": "Europe/Moscow",
+    "utc_offset": "UTC+03:00"
+  },
+  "poland": {
+    "city": "Pozna\u0144",
+    "state": "wojew\u00f3dztwo wielkopolskie",
+    "country": "Polska",
+    "timezone": "Europe/Warsaw",
+    "utc_offset": "UTC+02:00"
+  },
+  "united arab emirates": {
+    "city": "\u062f\u0628\u064a",
+    "state": "\u062f\u0628\u064a",
+    "country": "\u0627\u0644\u0625\u0645\u0627\u0631\u0627\u062a \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0645\u062a\u062d\u062f\u0629",
+    "timezone": "Asia/Dubai",
+    "utc_offset": "UTC+04:00"
+  },
+  "singapore": {
+    "city": "Singapore",
+    "state": null,
+    "country": "Singapore",
+    "timezone": "Asia/Singapore",
+    "utc_offset": "UTC+08:00"
+  },
+  "switzerland": {
+    "city": "zurich, zurich, switzerland",
+    "state": "",
+    "country": "Switzerland",
+    "timezone": "Europe/Zurich",
+    "utc_offset": "UTC+02:00"
+  },
+  "netherlands": {
+    "city": "Amsterdam",
+    "state": "Noord-Holland",
+    "country": "Nederland",
+    "timezone": "Europe/Amsterdam",
+    "utc_offset": "UTC+02:00"
+  },
+  "greece": {
+    "city": "Town of Greece",
+    "state": "New York",
+    "country": "United States",
+    "timezone": "America/New_York",
+    "utc_offset": "UTC-04:00"
+  },
+  "germany": {
+    "city": "Freiberg",
+    "state": "Sachsen",
+    "country": "Deutschland",
+    "timezone": "Europe/Berlin",
+    "utc_offset": "UTC+02:00"
+  }
+}
